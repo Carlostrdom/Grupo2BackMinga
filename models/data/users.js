@@ -7,7 +7,7 @@ const dataUsers = [
     {
       email: "user1@example.com",
       password: "Password123", 
-      photo: "https://example.com/photos/user1.jpg",
+      photo:"https://i.pravatar.cc/150?img=10",
       role: 0,
       online: true,
       time_stamps: new Date("2024-01-01T10:00:00Z"),
@@ -15,7 +15,7 @@ const dataUsers = [
     {
       email: "user2@example.com",
       password: "Password123",
-      photo: "https://example.com/photos/user2.png",
+      photo:"https://i.pravatar.cc/150?img=9",
       role: 2,
       online: false,
       time_stamps: new Date("2024-01-02T15:30:00Z"),
@@ -23,7 +23,7 @@ const dataUsers = [
     {
       email: "user3@example.com",
       password: "Password123",
-      photo: null,
+      photo:"https://i.pravatar.cc/150?img=8",
       role: 1,
       online: false,
       time_stamps: new Date(),
@@ -31,7 +31,7 @@ const dataUsers = [
     {
       email: "admin@example.com",
       password: "Password123",
-      photo: "https://example.com/photos/admin.png",
+      photo:"https://i.pravatar.cc/150?img=7",
       role: 0,
       online: true,
       time_stamps: new Date(),
@@ -39,7 +39,7 @@ const dataUsers = [
     {
       email: "guest@example.com",
       password: "Password123",
-      photo: null,
+      photo:"https://i.pravatar.cc/150?img=6",
       role: 2,
       online: false,
       time_stamps: new Date("2024-02-01T08:45:00Z"),
@@ -47,7 +47,7 @@ const dataUsers = [
     {
       email: "user4@example.com",
       password: "Password123",
-      photo: "https://example.com/photos/user4.jpg",
+      photo:"https://i.pravatar.cc/150?img=5",
       role: 2,
       online: true,
       time_stamps: new Date("2024-02-02T11:20:00Z"),
@@ -55,7 +55,7 @@ const dataUsers = [
     {
       email: "user5@example.com",
       password: "Password123",
-      photo: null,
+      photo:"https://i.pravatar.cc/150?img=4",
       role: 1,
       online: false,
       time_stamps: new Date(),
@@ -63,7 +63,7 @@ const dataUsers = [
     {
       email: "user6@example.com",
       password: "Password123",
-      photo: "https://example.com/photos/user6.png",
+      photo:"https://i.pravatar.cc/150?img=3",
       role: 1,
       online: true,
       time_stamps: new Date(),
@@ -71,7 +71,7 @@ const dataUsers = [
     {
       email: "user7@example.com",
       password: "Password123",
-      photo: "https://example.com/photos/user7.jpg",
+      photo:"https://i.pravatar.cc/150?img=2",
       role: 2,
       online: false,
       time_stamps: new Date("2024-02-03T10:00:00Z"),
@@ -79,13 +79,13 @@ const dataUsers = [
     {
       email: "Grupo2@example.com",
       password: "Password123",
-      photo: "https://example.com/photos/user8.jpg",
+      photo:"https://i.pravatar.cc/150?img=1",
       role: 3,
       online: true,
       time_stamps: new Date("2024-02-04T14:00:00Z"),
     },
   ];
-  
+
   const encryptPassword = (password) => {
     let hashPassword = bcryptjs.hashSync(password,10)
     return hashPassword
