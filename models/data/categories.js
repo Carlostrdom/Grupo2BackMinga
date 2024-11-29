@@ -1,3 +1,8 @@
+import 'dotenv/config.js'
+import '../../config/database.js'  
+import '../../models/User.js'
+import Category from '../../models/Category.js'
+
 const categoriesData = [
     {
       name: "Seinen",
@@ -41,5 +46,5 @@ const categoriesData = [
     },
   ];
   
-  export default categoriesData;
+  Category.insertMany(categoriesData);
   

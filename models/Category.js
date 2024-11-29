@@ -10,7 +10,7 @@ const schema = new Schema(
     description: { type: String, required: true }, 
     cover_photo: { type: String, required: true },
     character_photo: { type: String, required: true }, 
-    admin_id: { type: Schema.Types.ObjectId, ref: 'admins', required: true },
+    admin_id: { type: Schema.Types.ObjectId, ref: 'users', required: true },
   },
   { timestamps: true } 
 );
