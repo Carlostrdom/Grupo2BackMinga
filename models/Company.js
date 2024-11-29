@@ -1,13 +1,13 @@
-import { ref, required } from "joi";
 import { Schema, model } from "mongoose";
 
 let collection = 'companies'
 let schema = new Schema({
     name:{type:String, required: true},
     website: {type: String},
-    photoUrl:{type: String, required: true},
+    photo:{type: String, required: true},
     user_id:{type: Schema.Types.ObjectId, ref: 'users', required: true},
-    active:{type: String, required:true}
+    active:{type: Boolean, required:true},
+    time_stamps: { type: Date, default: Date.now }
 }, {
     timestamps: true
 })
