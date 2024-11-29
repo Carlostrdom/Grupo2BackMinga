@@ -9,7 +9,6 @@ let schema = new Schema(
         photo: { type: String, required: false },
         role:{ type: Number, required: true },
         online: { type: Boolean, default: false },
-        time_stamps: { type: Date, default: Date.now }
     },
     { timestamps: true } 
 );
