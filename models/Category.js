@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
 
-const collection = 'categories';
+let collection = 'categories';
 
-const schema = new Schema(
+let schema = new Schema(
   {
     name: { type: String, required: true }, 
     color: { type: String, required: true },
@@ -15,6 +15,6 @@ const schema = new Schema(
   { timestamps: true } 
 );
 
-const Category = model(collection, schema);
+let Category = model(collection, schema);
 
 export default Category;
