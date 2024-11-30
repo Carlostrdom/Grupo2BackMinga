@@ -1,4 +1,4 @@
-const validorUser = (schema) => [
+const validorschema = (schema) => [
     (req, res, next) => {
         const Vuser = schema.validate(req.body,{abortEarly: false})
 
@@ -11,4 +11,4 @@ const validorUser = (schema) => [
         next();
     }
 ]
-export default validorUser
+export default validorschema

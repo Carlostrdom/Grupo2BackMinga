@@ -22,11 +22,12 @@ const mangasData = [
       cover_photo: "https://i.postimg.cc/PqQHYqrL/main-alice-in-borderland.jpg",
       description:
         "Arisu Ryouhei will be leaving high school soon, but he tries to avoid thinking about his future. One night, when he is with his partner Karube and his friend Chouta, they see some fireworks. After a blinding explosion, they wake up in another world, called Borderland. Here people are forced to participate in violent games, where the participants must fight to survive. Will Arisu, Karube and Chouta be able to survive in this dangerous new world and find their way back to their true world?",
+        
       category_id: "67494d5d6d4c289c18a0fde0",// Shōnen
     },
     {
       author_id: "67492e87dae0b012dfb7e4d4",
-      company_id: "674938b0531bbe4712875baa", // No associated company for this manga
+      company_id: "674938b0531bbe4712875baa", 
       title: "Ao Haru Ride",
       cover_photo: "https://i.postimg.cc/ydWYPLCC/ao-haru-ride-752359695-large.jpg",
       description:
