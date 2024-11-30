@@ -14,5 +14,5 @@ let schema = new Schema ({
     timestamps:true
 })
 
-let Autor = model(collection,schema)
-export default Autor
+let Author = model(collection,schema)
+export default Author
