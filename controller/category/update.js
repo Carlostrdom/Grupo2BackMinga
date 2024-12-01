@@ -1,37 +1,35 @@
-import Company from "../../models/Company.js";
+import Category from "../../models/Category.js";
 
-let updateCompany = async (req, res, next) => {
+const updateCategory = async (req, res, next) => {
     try {
-        let company = req.body; 
+        let category = req.body; 
 
-        if (!company._id || !company.name) {
+        if (!category._id || !category.name) {
             return res.status(400).json({
                 success: false,
                 message: "Required fields missing (_id, name)."
             });
         }
 
-        const result = await Company.updateOne(
-            { _id: company._id },
-            { name: company.name }
+        const result = await Category.updateOne(
+            { _id: category._id },
+            { name: category.name }
         );
 
         if (result.matchedCount === 0) {
             return res.status(404).json({
                 success: false,
-                message: "Company not found."
+                message: "Category not found."
             });
         }
 
         return res.status(200).json({
             success: true,
-            response: company
+            response: author
         });
-
     } catch (error) {
-        next(error)
+        next(error); 
     }
+};
 
-}
-
-export default updateCompany
+export { updateCategory };
