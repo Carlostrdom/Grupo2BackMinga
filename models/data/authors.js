@@ -1,7 +1,7 @@
 import "dotenv/config.js"
 import '../../config/database.js'
 import '../User.js'
-import Autor from '../Autor.js'
+import Author from '../Author.js'
 
 const authors = [
     {
@@ -56,5 +56,5 @@ const authors = [
     }
   ]
 
-  Autor.insertMany(authors)
+  Author.insertMany(authors)
   
