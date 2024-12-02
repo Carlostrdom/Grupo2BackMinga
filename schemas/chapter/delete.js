@@ -1,5 +1,5 @@
 import joi from "joi-oid";
-import { ERROR_FORMAT_ID, ERROR_REQUIRED } from "../../shemas/utils/message.js";
+import { ERROR_FORMAT_ID, ERROR_REQUIRED } from "../../schemas/utils/message.js";
 
 const schemaDelete = joi.object({
     _id: joi
