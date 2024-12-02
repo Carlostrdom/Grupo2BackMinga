@@ -1,5 +1,5 @@
 import Category from "../../models/Category.js"
-import  "../../models/Author.js"
+import  "../../models/Category.js"
 
 
 let allCategories =  async (req,res,next) => {
@@ -18,8 +18,8 @@ let allCategories =  async (req,res,next) => {
 
 let categoriesById = async (req, res) => {
     try {
-        let authorsQuery = req.params.id 
-        let all = await Author.findById(authorsQuery)
+        let categoriesQuery = req.params.id 
+        let all = await Category.findById(categoriesQuery)
         return res.status(200).json({
             response: all
         })
