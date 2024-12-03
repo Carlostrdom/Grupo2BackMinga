@@ -1,6 +1,6 @@
 import Comment from "../../models/Comment.js";
 
-const deleteCo = async (res, req, next) => {
+const deleteCo = async (req, res, next) => {
     try {
         let deleteA = await Comment.deleteOne({
             _id: req.params._id

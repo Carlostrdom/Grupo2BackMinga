@@ -14,7 +14,7 @@ routerComment.get('/allComments', allComments)
 routerComment.get('/idComment/:_id', commentsById)
 routerComment.post('/create', create)
 routerComment.put('/update', updateComment)
-routerComment.delete('/delete/:_id', deleteCo)
+routerComment.delete("/deleteCo/:_id", deleteCo)
 
 
 
