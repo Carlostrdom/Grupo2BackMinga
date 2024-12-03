@@ -4,8 +4,8 @@ import deleteCompany from "../controller/companies/delete.js";
 import updateCompany from "../controller/companies/update.js";
 import { allCompanies, idAllCompanies } from "../controller/companies/read.js";
 import validator from "../middlewares/validator.js"
-import companySchema from "../schema/companies/create.js";
-import updateCompanySchema from "../schema/companies/update.js";
+import updateCompanySchema from "../schemas/companies/update.js";
+import companySchema from "../schemas/companies/create.js";
 
 
 

@@ -4,7 +4,10 @@ import Chapter from "../../models/Chapter.js";
 
 const allChapters = async (req, res, next) => {
     try {
-        let all = await Chapter.find()
+        const query = req.query.search
+            ? { title: { $regex: req.query.search, $options: 'i' } }
+            : {};
+        let all = await Chapter.find(query)
 
         return res.status(200).json({
             response: all
@@ -21,7 +24,7 @@ const chaptersById = async (req, res, next) => {
         const chapter = await Chapter.findById(chapterById);
         return res.status(200).json({
             response: chapter
-           
+
 
         })
     } catch (error) {

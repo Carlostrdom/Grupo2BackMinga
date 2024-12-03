@@ -9,10 +9,9 @@ import { deleteI} from "../controller/category/delete.js"
 const routerCategory = Router()
 
 routerCategory.get('/all',allCategories)
-routerCategory.get('/id/:id',categoriesById)
-
+routerCategory.get('/categoryId/:_id',categoriesById)
 routerCategory.post('/create',createCategories)
 routerCategory.put('/update',updateCategory)
-routerCategory.delete('/deleteI/:_id',deleteI)
+routerCategory.delete('/deleteId/:_id',deleteI)
 
 export default routerCategory

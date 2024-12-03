@@ -4,8 +4,11 @@ import  "../../models/Author.js"
 
 let allAuthors =  async (req,res,next) => {
     try {
-        
-    let all = await Author.find()
+    const query = req.query.search
+    ? { name: { $regex: req.query.search, $options: 'i' } }
+    : {};
+   
+    let all = await Author.find(query)
 
         return res.status (200).json({
             response: all
