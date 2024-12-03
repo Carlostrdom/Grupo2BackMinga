@@ -1,30 +1,53 @@
-import Joi from 'joi-oid';
+import joi from 'joi-oid';
+import {
+  ERROR_EMPTY,
+  ERROR_REQUIRED,
+  ERROR_BOOLEAN,
+  ERROR_FORMAT_URL,
+  ERROR_FORMAT_ID,
+} from "../../schemas/utils/message.js";
 
 
-
-const companySchema = Joi.object({
-  name: Joi.string().required().messages({
-    'any.required': 'The name field is required.',
-    'string.empty': 'The name cannot be empty.',
-  }),
-  website: Joi.string().uri().optional().messages({
-    'string.uri': 'The website must be a valid URL.',
-  }),
-  photo: Joi.string().uri().required().messages({
-    'any.required': 'The photo field is required.',
-    'string.empty': 'The photo cannot be empty.',
-    'string.uri': 'The photo must be a valid URL.',
-  }),
-  user_id: Joi.string()
+const companySchema = joi.object({
+  name: joi
+    .string()
+    .required()
+    .messages({
+      'any.required': "name " + ERROR_REQUIRED,
+      'string.empty': "name " + ERROR_EMPTY,
+    }),
+  website: joi
+    .string()
+    .uri()
+    .optional()
+    .messages({
+      "string.empty": "website " + ERROR_EMPTY,
+      "string.uri": "website" + ERROR_FORMAT_URL,
+    }),
+  photo: joi
+    .string()
+    .uri()
+    .required()
+    .messages({
+      "string.empty": "photo " + ERROR_EMPTY,
+      "any.required": "photo " + ERROR_REQUIRED,
+      "string.uri": "photo" + ERROR_FORMAT_URL,
+    }),
+  user_id: joi
+    .string()
     .pattern(/^[0-9a-fA-F]{24}$/)
     .required()
     .messages({
-      'any.required': 'The user_id field is required.',
-      'string.pattern.base': 'The user_id must be a valid ObjectId.',
+      'any.required': "user_id" + ERROR_REQUIRED,
+      'string.pattern.base': "user_id" + ERROR_FORMAT_ID,
     }),
-  active: Joi.boolean().required().messages({
-    'any.required': 'The active field is required.',
-  }),
+  active: joi
+    .boolean()
+    .required()
+    .messages({
+      "boolean.base": "online " + ERROR_BOOLEAN,
+      "any.required": "online " + ERROR_REQUIRED,
+    }),
 });
 
 export default companySchema
