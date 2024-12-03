@@ -4,6 +4,7 @@ import companyRouter from "./companies.js";
 import routerCategory from "./category.js";
 import routerChapter from "./chapter.js";
 import routerManga from "./manga.js";
+import routerComment from "./comment.js";
 
 
 
@@ -15,6 +16,7 @@ router.use('/company', companyRouter )
 router.use('/category', routerCategory)
 router.use("/chapter", routerChapter)
 router.use("/manga", routerManga)
+router.use('/comment', routerComment)
 
 
 

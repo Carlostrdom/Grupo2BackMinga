@@ -1,14 +1,14 @@
 import Author from "../../models/Author.js";
 
 
-let createAuthors = async (req,res,next) => {
+let createAuthors = async (req, res, next) => {
     try {
         let authors = req.body
         let all = await Author.create(authors)
         return res.status(201).json({
-            response:all
+            response: all
         })
-        
+
     } catch (error) {
         next(error)
     }

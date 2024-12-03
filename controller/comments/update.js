@@ -1,9 +1,9 @@
-import Author from "../../models/Author.js";
+import Comment from "../../models/Comment.js";
 
-const updateAuthor = async (req, res, next) => {
+const updateComment = async(req, res, next) => {
     try {
 
-        const updatedresult = await Author.findByIdAndUpdate(
+        const updatedresult = await Comment.findByIdAndUpdate(
             req.body._id,
             req.body,
 
@@ -16,6 +16,6 @@ const updateAuthor = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-};
+}
 
-export { updateAuthor };
+export default updateComment
