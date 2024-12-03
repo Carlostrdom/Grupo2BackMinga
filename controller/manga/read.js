@@ -4,7 +4,9 @@ import Manga from "../../models/Manga.js"
 
 const allManga = async (req, res, next) => {
     try {
-        let all = await Manga.find()
+
+        const query = req.query.search ? {title: {$regex: req.query.search, $options:'i'}}:{}
+        let all = await Manga.find(query)
 
         return res.status(200).json({
             response: all
