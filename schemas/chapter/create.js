@@ -2,7 +2,6 @@ import joi from "joi-oid";
 import {
     ERROR_REQUIRED,
     ERROR_NUMBER,
-    ERROR_ARRAY,
     ERROR_FORMAT_ID,
 } from "../utils/message.js";
 

@@ -1,27 +1,56 @@
-import Joi from "joi-oid";
+import joi from "joi-oid";
+import {
+  ERROR_FORMAT_ID,
+  ERROR_EMPTY,
+  ERROR_REQUIRED,
+  ERROR_BOOLEAN,
+  ERROR_FORMAT_URL,
+} from "../../schemas/utils/message.js";
 
 
-const updateCompanySchema = Joi.object({
-  name: Joi.string().optional().messages({
-    'string.empty': 'The name cannot be empty.',
-  }),
-  website: Joi.string().uri().optional().messages({
-    'string.uri': 'The website must be a valid URL.',
-  }),
-  photo: Joi.string().uri().optional().messages({
-    'string.uri': 'The photo must be a valid URL.',
-  }),
-  user_id: Joi.string()
+const updateCompanySchema = joi.object({
+  _id: joi
+    .objectId()
+    .required()
+    .messages({
+      "string.pattern.name": "_id " + ERROR_FORMAT_ID,
+      "any.required": "_id " + ERROR_REQUIRED,
+    }),
+  name: joi
+    .string()
+    .optional()
+    .messages({
+      "string.empty": "name" + ERROR_EMPTY,
+    }),
+  website: joi
+    .string()
+    .uri()
+    .optional()
+    .messages({
+      "string.empty": "website " + ERROR_EMPTY,
+      "string.uri": "website" + ERROR_FORMAT_URL,
+    }),
+  photo: joi
+    .string()
+    .uri()
+    .optional()
+    .messages({
+      "string.empty": "photo " + ERROR_EMPTY,
+      "any.required": "photo " + ERROR_REQUIRED,
+    }),
+  user_id: joi
+    .string()
     .pattern(/^[0-9a-fA-F]{24}$/)
     .optional()
     .messages({
-      'string.pattern.base': 'The user_id must be a valid ObjectId.',
+      'string.pattern.base': "user_id" + ERROR_FORMAT_ID,
     }),
-  active: Joi.boolean().optional().messages({
-    'boolean.base': 'The active field must be a boolean.',
-  }),
-}).min(1).messages({
-  'object.min': 'At least one field must be provided for update.',
-});
+  active: joi
+    .boolean()
+    .optional()
+    .messages({
+      "boolean.base": "active" + ERROR_BOOLEAN,
+    }),
+})
 
 export default updateCompanySchema
