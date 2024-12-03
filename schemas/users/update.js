@@ -18,7 +18,21 @@ const schema = joi.object({
             "string.pattern.name": "_id " + ERROR_FORMAT_ID,
             "any.required": "_id " + ERROR_REQUIRED,
         }),
-  
+    firstName: joi
+        .string()
+        .messages({
+            "string.empty": "firstName " + ERROR_EMPTY,
+            "any.required": "firstName " + ERROR_REQUIRED,
+            "string.pattern.base": "firstName " + ERROR_FORMAT_STRING,
+        }),
+    lastName: joi
+        .string()
+
+        .messages({
+            "string.empty": "lastName " + ERROR_EMPTY,
+            "any.required": "lastName " + ERROR_REQUIRED,
+            "string.pattern.base": "lastName " + ERROR_FORMAT_STRING,
+        }),
     email: joi
         .string()
         .email()
@@ -27,13 +41,19 @@ const schema = joi.object({
             "string.email": "email " + ERROR_EMAIL,
             "any.required": "email " + ERROR_REQUIRED,
         }),
-    photo: joi
+    photoUrl: joi
         .string()
         .messages({
-            "string.empty": "photo " + ERROR_EMPTY,
-            "any.required": "photo " + ERROR_REQUIRED,
+            "string.empty": "photoUrl " + ERROR_EMPTY,
+            "any.required": "photoUrl " + ERROR_REQUIRED,
         }),
-   
+    country: joi
+        .string()
+        .messages({
+            "string.empty": "country " + ERROR_EMPTY,
+            "any.required": "country " + ERROR_REQUIRED,
+            "string.pattern.base": "country " + ERROR_FORMAT_STRING,
+        }),
     role: joi
         .number()
         .messages({
