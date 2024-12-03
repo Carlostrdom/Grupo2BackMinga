@@ -4,6 +4,8 @@ import companyRouter from "./companies.js";
 import routerCategory from "./category.js";
 import routerChapter from "./chapter.js";
 import routerManga from "./manga.js";
+import usersRouter from "./users.js";
+import authRouter from "./auth.js";
 
 
 
@@ -15,6 +17,10 @@ router.use('/company', companyRouter )
 router.use('/category', routerCategory)
 router.use("/chapter", routerChapter)
 router.use("/manga", routerManga)
+router.use('/users', usersRouter);
+router.use('/auth',authRouter);
+
+
 
 
 
