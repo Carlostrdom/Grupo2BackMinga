@@ -4,6 +4,7 @@ import {
     ERROR_EMPTY,
     ERROR_FORMAT_ID,
     ERROR_FORMAT_STRING,
+    ERROR_NUMBER,
 } from "../utils/message.js";
 
 const schemaUpdate = joi.object({

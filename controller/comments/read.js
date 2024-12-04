@@ -22,8 +22,6 @@ const allComments = async (req, res, next) => {
         }
       : {};
 
-      console.log('Query:', query);
-
         let all = await Comment.find(query)
 
         return res.status(200).json({
