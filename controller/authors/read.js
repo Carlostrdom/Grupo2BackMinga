@@ -1,38 +1,36 @@
 import Author from "../../models/Author.js"
-import  "../../models/Author.js"
 
-
-let allAuthors =  async (req,res,next) => {
+let allAuthors = async (req, res, next) => {
     try {
-    const query = req.query.search
-    ? { name: { $regex: req.query.search, $options: 'i' } }
-    : {};
-   
-    let all = await Author.find(query)
+        const query = req.query.search
+            ? { name: { $regex: req.query.search, $options: 'i' } }
+            : {};
 
-        return res.status (200).json({
+        let all = await Author.find(query)
+
+        return res.status(200).json({
             response: all
         })
-      
+
     } catch (error) {
-       next(error)
+        next(error)
     }
 }
 
-let authorsById = async (req, res) => {
+let authorsById = async (req, res, next) => {
     try {
-        let authorsQuery = req.params.id 
+        let authorsQuery = req.params.id
         let all = await Author.findById(authorsQuery)
         return res.status(200).json({
             response: all
         })
     } catch (error) {
         next(error)
-        
+
     }
 }
 
 
-export  { allAuthors, authorsById }
+export { allAuthors, authorsById }
 
 

@@ -1,7 +1,6 @@
 import { Schema, model } from 'mongoose';
 
 const collection = 'comments';
-
 const schema = new Schema(
   {
     chapter_id: { type: Schema.Types.ObjectId, ref: 'chapters', required: true }, // Referencia al ID del capítulo

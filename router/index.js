@@ -6,6 +6,8 @@ import routerChapter from "./chapter.js";
 import routerManga from "./manga.js";
 import usersRouter from "./users.js";
 import authRouter from "./auth.js";
+import routerComment from "./comment.js";
+import routerReaction from "./reactions.js";
 
 
 
@@ -19,8 +21,8 @@ router.use("/chapter", routerChapter)
 router.use("/manga", routerManga)
 router.use('/users', usersRouter);
 router.use('/auth',authRouter);
-
-
+router.use("/comment", routerComment)
+router.use('/reaction', routerReaction)
 
 
 
