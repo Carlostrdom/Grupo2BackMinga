@@ -9,6 +9,7 @@ let allCategories =  async (req,res,next) => {
           : {};
     
         let all = await Category.find(query);
+        
     
         return res.status(200).json({
           success: true,
