@@ -8,13 +8,12 @@
     "start": "node ./server.js",
     "dev": "nodemon ./server.js",
     "dataUser": "node ./models/data/users.js",
-    "dataAuthor":"node ./models/data/authors.js",
-    "dataCompany":"node ./models/data/companies.js",
-    "dataCategory":"node ./models/data/categories.js",
-    "dataManga":"node ./models/data/mangas.js",
-    "dataComment":"node ./models/data/comments.js",
-    "dataReaction":"node ./models/data/reactions.js"
-    
+    "dataAuthor": "node ./models/data/authors.js",
+    "dataCompany": "node ./models/data/companies.js",
+    "dataCategory": "node ./models/data/categories.js",
+    "dataManga": "node ./models/data/mangas.js",
+    "dataComment": "node ./models/data/comments.js",
+    "dataReaction": "node ./models/data/reactions.js"
   },
   "keywords": [],
   "author": "",
