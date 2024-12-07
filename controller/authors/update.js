@@ -2,10 +2,10 @@ import Author from "../../models/Author.js";
 
 const updateAuthor = async (req, res, next) => {
     try {
-
-        const updatedresult = await Author.findByIdAndUpdate(
-            req.body._id,
-            req.body,
+        let authors = req.body;
+      
+        const updatedresult = await Author.updateOne(
+            { name: user.name },authors
 
         );
 
