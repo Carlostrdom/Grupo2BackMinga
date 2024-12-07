@@ -2,9 +2,11 @@ import Company from "../../models/Company.js";
 
 let updateCompany = async (req, res, next) => {
   try {
-    const updCompany = await Company.findByIdAndUpdate(
-        req.body._id,
-        req.body,
+
+    let company = req.body
+    const updCompany = await Company.updateOne(
+        {name:company.name},
+        company
        
     );
   

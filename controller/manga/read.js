@@ -1,21 +1,22 @@
 import Manga from "../../models/Manga.js"
+import "../../models/Category.js"
 
 
 
 const allManga = async (req, res, next) => {
     try {
-const query = {}
-console.log(req.query.search);
-if(req.query.search){
-    query.title = {$regex: req.query.search, $options:'i'}
-}
-if(req.query.category !== "" && req.query.category != undefined){
-    query.category_id = req.query.category
-}
-        
+        const query = {}
+        console.log(req.query.search);
+        if (req.query.search) {
+            query.title = { $regex: req.query.search, $options: 'i' }
+        }
+        if (req.query.category !== "" && req.query.category != undefined) {
+            query.category_id = req.query.category
+        }
+
         console.log(query);
-        
-        let all = await Manga.find(query)
+
+        let all = await Manga.find(query).populate('category_id', 'name color shadow description cover_photo character_photo').exec();
 
         return res.status(200).json({
             response: all
@@ -41,5 +42,30 @@ const mangaById = async (req, res, next) => {
     }
 }
 
+let getMangaAuthor = async (req, res, next) => {
+    try {
+        const query = {}
+        if (req.query.author != "" && req.query.author != undefined) {
+            query.author_id = req.query.author
+        }
 
-export { allManga, mangaById }
+        if (req.query.company !== "" && req.query.company != undefined) {
+            query.company_id = req.query.company
+        }
+        // hacer middleware
+       
+        console.log(query);
+
+        let all = await Manga.find(query)
+
+        return res.status(200).json({
+            response: all
+        })
+    } catch (error) {
+    }
+}
+
+
+
+
+export { allManga, mangaById, getMangaAuthor }
