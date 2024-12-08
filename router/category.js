@@ -5,7 +5,7 @@ import { updateCategory} from "../controller/category/update.js";
 import { deleteI} from "../controller/category/delete.js"
 import createSchemaCategory from "../schemas/category/create.js";
 import updateSchemaCategory from "../schemas/category/update.js";
-import validorschema from "../middlewares/Validator.js";
+import validorschema from "../middlewares/validator.js";
 
 
 const routerCategory = Router()
