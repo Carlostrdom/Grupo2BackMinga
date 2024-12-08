@@ -3,7 +3,7 @@ import { allManga, getMangaAuthor, mangaById } from "../controller/manga/read.js
 import { createManga } from "../controller/manga/create.js";
 import { updateManga } from "../controller/manga/update.js";
 import { deleteManga } from "../controller/manga/delete.js";
-import validator from "../middlewares/Validator.js"
+import validator from "../middlewares/validator.js"
 import createSchemaManga from "../schemas/manga/create.js";
 import updateSchemaManga from "../schemas/manga/update.js";
 

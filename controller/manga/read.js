@@ -52,7 +52,7 @@ let getMangaAuthor = async (req, res, next) => {
         if (req.query.company !== "" && req.query.company != undefined) {
             query.company_id = req.query.company
         }
-        // hacer middleware
+        
        
         console.log(query);
 
