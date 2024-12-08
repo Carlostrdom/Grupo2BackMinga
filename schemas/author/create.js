@@ -44,18 +44,12 @@ const createAuthorSchema = joi.object({
             'string.empty': "City" + ERROR_EMPTY,
             'any.required': "City" + ERROR_REQUIRED,
         }),
-    country: joi
-        .string()
-        .required()
-        .messages({
-            'string.empty': "Country" + ERROR_EMPTY,
-            'any.required': "Country" + ERROR_REQUIRED,
-        }),
+    
     date: joi
         .date()
         .required()
         .messages({
-            'date.base': "Date" + ERROR_DATE,
+            'date.base': "Date " + ERROR_DATE,
             'any.required': "Date" + ERROR_REQUIRED,
         }),
     photo: joi
@@ -72,12 +66,11 @@ const createAuthorSchema = joi.object({
         .regex(/^[0-9a-fA-F]{24}$/)
         .required()
         .messages({
-            'any.required': "user_id" + ERROR_REQUIRED,
-            'string.pattern.base': "user_id" + ERROR_FORMAT_ID,
+            'any.required': "user_id " + ERROR_REQUIRED,
+            'string.pattern.base': "user_id " + ERROR_FORMAT_ID,
         }),
     active: joi
         .boolean()
-        .required()
         .messages({
             "boolean.base": "online " + ERROR_BOOLEAN,
             "any.required": "online " + ERROR_REQUIRED,
