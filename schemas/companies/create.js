@@ -33,6 +33,13 @@ const companySchema = joi.object({
       "any.required": "photo " + ERROR_REQUIRED,
       "string.uri": "photo" + ERROR_FORMAT_URL,
     }),
+    description: joi
+    .string()
+    .required()
+    .messages({
+      "string.empty": "description " + ERROR_EMPTY,
+      "any.required": "description" + ERROR_REQUIRED,
+    }),
   user_id: joi
     .string()
     .pattern(/^[0-9a-fA-F]{24}$/)
@@ -43,7 +50,6 @@ const companySchema = joi.object({
     }),
   active: joi
     .boolean()
-    .required()
     .messages({
       "boolean.base": "online " + ERROR_BOOLEAN,
       "any.required": "online " + ERROR_REQUIRED,
