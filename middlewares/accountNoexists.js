@@ -8,6 +8,7 @@ const accountNotExist = async (req, res, next) => {
                 email: account.email,
                 password: account.password,
                 role: account.role,
+                photo: account.photo
             }
             return next();
         }
