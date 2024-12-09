@@ -7,7 +7,7 @@ const allChapters = async (req, res, next) => {
         const query = req.query.search
             ? { title: { $regex: req.query.search, $options: 'i' } }
             : {};
-        let all = await Chapter.find(query)
+        let all = await Chapter.find(query).populate('manga_id', 'title cover_photo description category_id').exec();
 
         return res.status(200).json({
             response: all
