@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { allChapters, chaptersById } from "../controller/chapter/read.js";
+import { allChapters, chaptersById, chaptersBymangas } from "../controller/chapter/read.js";
 import { createChapteries } from "../controller/chapter/create.js";
 import { updateChapter } from "../controller/chapter/update.js";
 import { deleteChapter } from "../controller/chapter/delete.js";
@@ -11,6 +11,7 @@ const routerChapter = Router()
 
 routerChapter.get('/all', allChapters)
 routerChapter.get("/chapterId/:_id", chaptersById)
+routerChapter.get("/mangaId/:_id", chaptersBymangas)
 routerChapter.post("/createChapter",validator(schemaChapter),createChapteries)
 routerChapter.put("/updateChapter",validator(schemaUpdate), updateChapter)
 routerChapter.delete("/deleteChapter/:_id", deleteChapter)
