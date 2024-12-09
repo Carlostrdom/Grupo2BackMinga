@@ -22,9 +22,7 @@ const chaptersById = async (req, res, next) => {
     try {
         const chapterById = req.params._id;
         const chapter = await Chapter.findById(chapterById);
-        if (!chapter) {
-            return res.status(404).json({ message: 'Chapter not found' });
-        }
+        
         return res.status(200).json({
             response: chapter
 
@@ -35,5 +33,21 @@ const chaptersById = async (req, res, next) => {
     }
 }
 
+const chaptersBymangas = async (req, res, next) => {
+    try {
+        const manga_id = req.params._id;
+        const chapter = await Chapter.find({manga_id:manga_id}).populate('manga_id', 'title cover_photo description category_id').exec();
+        
 
-export { allChapters, chaptersById }
+        
+        return res.status(200).json({
+            response: chapter
+
+
+        })
+    } catch (error) {
+        next(error);
+    }
+}
+
+export { allChapters, chaptersById , chaptersBymangas}
