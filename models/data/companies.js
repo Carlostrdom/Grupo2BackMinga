@@ -7,7 +7,7 @@ const mangaCompanies = [
     {
       name: "Shonen Jump",
       website: "https://www.shonenjump.com",
-      description: "Una de las editoriales más icónicas de mangas Shonen, responsable de títulos como Dragon Ball, Naruto y One Piece.",
+      description: "One of the most iconic Shonen manga publishers, responsible for titles such as Dragon Ball, Naruto and One Piece.",
       photo: "https://i.pravatar.cc/150?img=22",
       user_id: "674927a078ed0bf770162211",
       active: true,
@@ -15,7 +15,7 @@ const mangaCompanies = [
     {
       name: "Kodansha Comics",
       website: "https://www.kodanshacomics.com",
-      description: "Editorial japonesa conocida por publicar obras populares como Attack on Titan y Fairy Tail.",
+      description: "Japanese publisher known for publishing popular works such as Attack on Titan and Fairy Tail.s",
       photo: "https://i.pravatar.cc/150?img=15",
       user_id: "674927a078ed0bf770162213",
       active: true,
@@ -23,7 +23,7 @@ const mangaCompanies = [
     {
       name: "VIZ Media",
       website: "https://www.viz.com",
-      description: "Una de las principales distribuidoras de manga y anime en inglés, con títulos como My Hero Academia y Death Note.",
+      description: "One of the main distributors of manga and anime in English, with titles such as My Hero Academia and Death Note.",
       photo: "https://i.pravatar.cc/150?img=12",
       user_id: "674927a078ed0bf77016220b",
       active: true,
@@ -31,7 +31,7 @@ const mangaCompanies = [
     {
       name: "Square Enix Manga",
       website: "https://www.square-enix-manga.com",
-      description: "Editorial especializada en mangas como Fullmetal Alchemist y Soul Eater.",
+      description: "Publisher specialized in mangas such as Fullmetal Alchemist and Soul Eater.",
       photo: "https://i.pravatar.cc/150?img=10",
       user_id: "674927a078ed0bf77016220d",
       active: true,
@@ -39,7 +39,7 @@ const mangaCompanies = [
     {
       name: "Dark Horse Comics",
       website: "https://www.darkhorse.com",
-      description: "Conocida por traer mangas como Berserk y Hellsing al mercado occidental.",
+      description: "Known for bringing mangas like Berserk and Hellsing to the Western market.",
       photo: "https://i.pravatar.cc/150?img=1",
       user_id: "674927a078ed0bf770162210",
       active: true,

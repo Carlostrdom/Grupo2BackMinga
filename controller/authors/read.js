@@ -6,7 +6,7 @@ let allAuthors = async (req, res, next) => {
             ? { name: { $regex: req.query.search, $options: 'i' } }
             : {};
 
-        let all = await Author.find(query)
+        let all = await Author.find(query).populate('user_id','email password role photo').exec();
 
         return res.status(200).json({
             response: all

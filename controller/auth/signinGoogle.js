@@ -6,7 +6,7 @@ export default async(req,res,next) => {
             {email: req.user.email},
             {online: true}
         )
-        console.log(req);
+       
 
         return res.redirect('http://localhost:5173/home?token='+req.token)
         

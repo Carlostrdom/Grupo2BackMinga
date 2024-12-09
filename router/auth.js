@@ -1,7 +1,7 @@
 import { Router } from "express";
 import accountNotExist from "../middlewares/accountNoexists.js";
 import generateToken from "../middlewares/generateToken.js";
-import validorUser from "../middlewares/Validator.js";
+import validorUser from "../middlewares/validator.js";
 import isValidadPassword from "../middlewares/isValidadPassword.js";
 import user_schema_signin from "../schemas/auth/auth.js";
 import signIn from "../controller/auth/signin.js";

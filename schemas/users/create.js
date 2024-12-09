@@ -32,7 +32,6 @@ const schema = joi.object({
    
         role: joi
         .number()
-        .required()
         .messages({
             "number.base": "role " + ERROR_NUMBER,
             "any.required": "role " + ERROR_REQUIRED,
