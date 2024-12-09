@@ -6,8 +6,9 @@ let schema = new Schema({
     website: {type: String},
     description:{type: String, required: true},
     photo:{type: String, required: true},
+    description:{type: String, required: true},
     user_id:{type: Schema.Types.ObjectId, ref: 'users', required: true},
-    active:{type: Boolean, required:true},
+    active:{type: Boolean },
 }, {
     timestamps: true
 })

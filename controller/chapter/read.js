@@ -22,6 +22,9 @@ const chaptersById = async (req, res, next) => {
     try {
         const chapterById = req.params._id;
         const chapter = await Chapter.findById(chapterById);
+        if (!chapter) {
+            return res.status(404).json({ message: 'Chapter not found' });
+        }
         return res.status(200).json({
             response: chapter
 
