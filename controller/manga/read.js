@@ -1,5 +1,6 @@
 import Manga from "../../models/Manga.js"
 import "../../models/Category.js"
+import { populate } from "dotenv";
 
 
 
@@ -16,7 +17,7 @@ const allManga = async (req, res, next) => {
 
         console.log(query);
 
-        let all = await Manga.find(query).populate('category_id', 'name color shadow description cover_photo character_photo').exec();
+        let all = await Manga.find(query).populate('category_id', 'name color shadow description cover_photo character_photo').populate('author_id', 'name last_name photo date user_id')   .exec();
 
         return res.status(200).json({
             response: all

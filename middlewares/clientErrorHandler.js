@@ -1,7 +1,6 @@
 const clientErrorHandler = (error, req, res, next) => {
     console.log(error);
 
-    // Si el error tiene un status definido (error de cliente)
     if (error.status) {
         return res.status(400).json({
             success: false,
@@ -10,7 +9,6 @@ const clientErrorHandler = (error, req, res, next) => {
         });
     }
 
-    // Pasar al siguiente middleware si no es un error de cliente
     next(error);
 };
 
