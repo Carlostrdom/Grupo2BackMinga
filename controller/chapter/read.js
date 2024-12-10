@@ -35,8 +35,8 @@ const chaptersById = async (req, res, next) => {
 
 const chaptersBymangas = async (req, res, next) => {
     try {
-        const manga_id = req.params._id;
-        const chapter = await Chapter.find({manga_id:manga_id}).populate('manga_id', 'title cover_photo description category_id').exec();
+        let manga_id = req.params._id;
+        let chapter = await Chapter.find({manga_id:manga_id}).populate('manga_id', 'title cover_photo description category_id').exec();
         
 
         

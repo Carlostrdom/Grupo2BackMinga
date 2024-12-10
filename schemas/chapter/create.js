@@ -29,7 +29,6 @@ const schemaChapter = joi.object({
             "any.required": "cover_photo " + ERROR_REQUIRED,
         }),
     pages: joi
-        .string()
         .required()
         .messages({
             "string.empty": "pages " + ERROR_REQUIRED,

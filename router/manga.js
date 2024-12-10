@@ -6,13 +6,14 @@ import { deleteManga } from "../controller/manga/delete.js";
 import validator from "../middlewares/validator.js"
 import createSchemaManga from "../schemas/manga/create.js";
 import updateSchemaManga from "../schemas/manga/update.js";
+import passport from "../middlewares/passport.js";
 
 const routerManga = Router()
 
 routerManga.get('/all', allManga)
 routerManga.get("/mangaId/:_id", mangaById)
 routerManga.get("/mangaAuthorOrCompany", getMangaAuthor)
-routerManga.post("/createManga",validator(createSchemaManga),createManga)
+routerManga.post("/createManga", passport.authenticate('jwt', { session: false }),validator(createSchemaManga),createManga)
 routerManga.put("/updateManga",validator(updateSchemaManga), updateManga)
 routerManga.delete("/deleteManga/:_id", deleteManga)
 
