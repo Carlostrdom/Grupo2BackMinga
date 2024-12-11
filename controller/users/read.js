@@ -1,4 +1,6 @@
 import User from "../../models/User.js"
+import Author from "../../models/Author.js"
+import Company from "../../models/Company.js"
 
 
 const allUser = async (req,res,next)=>{
@@ -30,9 +32,13 @@ const idAllUsers = async (req, res, next) => {
 };
 
 const recorToken = async (req, res, next) => {
-    
+    const author = await Author.find({user_id:req.user._id})
+    const company = await Company.find({user_id:req.user._id})
         return res.status(200).json({
-            user: req.user
+            user: req.user,
+     
+            author: author  ? author[0]: null,
+            company: company ? company[0]:null
         });
 };
 
