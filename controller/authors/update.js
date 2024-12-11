@@ -1,21 +1,27 @@
 import Author from "../../models/Author.js";
 
-const updateAuthor = async (req, res, next) => {
+const updateAuthor = async (req, res,next) => {
     try {
-        let authors = req.body;
-      
-        const updatedresult = await Author.updateOne(
-            { name: user.name },authors
+        const { _id, ...updateFields } = req.body;
 
-        );
+    const updatedResult = await Author.findOneAndUpdate(
+        { _id: _id },
+        updateFields,
+        { new: true }
+    );
+console.log(updatedResult);
 
-        return res.status(200).json({
-            success: true,
-            response: updatedresult
-        });
+    return res.status(200).json({
+        success: true,
+        message: "Autor actualizado con éxito.",
+        response: updatedResult
+    });
     } catch (error) {
+        console.log(error);
+        
         next(error);
     }
+    
 };
 
 export { updateAuthor };

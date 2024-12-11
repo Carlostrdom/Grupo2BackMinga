@@ -1,23 +1,27 @@
 import Company from "../../models/Company.js";
 
-let updateCompany = async (req, res, next) => {
-  try {
-
-    let company = req.body
-    const updCompany = await Company.updateOne(
-        {name:company.name},
-        company
-       
-    );
-  
-
-    return res.status(200).json({
-        success: true,
-        response: updCompany
-    });
-} catch (error) {
-    next(error); 
-}
-}
+    const updateCompany = async (req, res,next) => {
+        try {
+            const { _id, ...updateFields } = req.body;
+    
+        const updatedResult = await Company.findOneAndUpdate(
+            { _id: _id },
+            updateFields,
+            { new: true }
+        );
+    console.log(updatedResult);
+    
+        return res.status(200).json({
+            success: true,
+            message: "Autor actualizado con éxito.",
+            response: updatedResult
+        });
+        } catch (error) {
+            console.log(error);
+            
+            next(error);
+        }
+        
+    }; 
 
 export default updateCompany
